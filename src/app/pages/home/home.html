@@ -1,0 +1,52 @@
+<section class="hero">
+  <div class="overlay">
+    <h1>Your Health, Our Priority</h1>
+    <p>Connect with certified doctors and book appointments instantly.</p>
+    <button (click)="goToAppointment()">Book Appointment</button>
+  </div>
+</section>
+
+<section class="services">
+  <h2>Our Services</h2>
+  <p>We provide high quality healthcare services for you</p>
+
+  <div class="service-grid">
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" />
+      <h3>Consultation</h3>
+      <p>Talk to expert doctors online anytime.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4320/4320337.png" />
+      <h3>Emergency</h3>
+      <p>24/7 emergency healthcare services.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png" />
+      <h3>Diagnostics</h3>
+      <p>Advanced lab and diagnostic services.</p>
+    </div>
+  </div>
+</section>
+
+<section class="doctors">
+  <h2>Featured Doctors</h2>
+
+  <div class="cards">
+    <div *ngFor="let doc of doctors" class="card">
+      <img [src]="doc.image" />
+
+      <h3>{{ doc.name }}</h3>
+
+      <p class="special">{{ doc.specialization }}</p>
+
+      <p class="exp">⭐ {{ doc.rating }} | {{ doc.experience }}</p>
+
+      <p class="email">{{ doc.email }}</p>
+
+      <button (click)="goToAppointment()">Book Appointment</button>
+    </div>
+  </div>
+</section>

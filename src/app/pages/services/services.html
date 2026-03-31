@@ -1,0 +1,14 @@
+<section class="services-section">
+  <h2>Our Services</h2>
+  <p class="subtitle">Specialized departments for quality healthcare</p>
+
+  <div class="services-grid">
+    <div class="card" *ngFor="let service of services">
+      <div class="icon">{{ service.icon }}</div>
+
+      <h3>{{ service.title }}</h3>
+
+      <p>{{ service.description }}</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<div class="doctor-container">
+  <h2>👨‍⚕️ Our Doctors</h2>
+
+  <div class="search-box">
+    <input [(ngModel)]="search" placeholder="🔍 Search doctor..." />
+  </div>
+
+  <div class="grid">
+    <div *ngFor="let doc of filteredDoctors()" class="card">
+      <img [src]="'https://randomuser.me/api/portraits/men/' + doc.id + '.jpg'" />
+
+      <h3>{{ doc.name }}</h3>
+
+      <p class="special">{{ doc.specialization }}</p>
+
+      <p class="info">⭐ {{ doc.rating }} | {{ doc.experience }}</p>
+
+      <p class="email">{{ doc.email }}</p>
+
+      <button (click)="goToAppointment(doc)">Book Appointment</button>
+    </div>
+  </div>
+</div>

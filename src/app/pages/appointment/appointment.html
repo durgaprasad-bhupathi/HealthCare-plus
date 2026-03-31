@@ -1,0 +1,48 @@
+<div class="appointment-container">
+  <h2>Book Appointment</h2>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" formControlName="name" placeholder="Enter Your Full name" />
+      <small *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
+        Name is required
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" formControlName="email" placeholder="Enter Your Email Address" />
+      <small *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+        Enter valid email
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="text" formControlName="phoneNumber" placeholder="Enter Your Phone Number" />
+      <small *ngIf="form.get('phoneNumber')?.touched && form.get('phoneNumber')?.invalid">
+        Enter valid 10-digit number
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label>Select Doctor</label>
+      <select formControlName="doctor">
+        <option value="" disabled selected>Select a Doctor</option>
+        <option *ngFor="let doc of doctors" [value]="doc">
+          {{ doc }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Appointment Date</label>
+      <input type="date" formControlName="date" placeholder="Select Date" />
+    </div>
+
+    <button type="submit">Book Appointment</button>
+
+    <p class="success" *ngIf="success">Appointment Booked Successfully!</p>
+  </form>
+</div>
