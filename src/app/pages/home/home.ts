@@ -47,8 +47,4 @@ export class Home {
       ];
     });
   }
-
-  goToAppointment() {
-    this.router.navigate(['/appointment']);
-  }
 }

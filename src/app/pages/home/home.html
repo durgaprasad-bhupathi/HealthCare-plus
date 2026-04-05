@@ -2,7 +2,7 @@
   <div class="overlay">
     <h1>Your Health, Our Priority</h1>
     <p>Connect with certified doctors and book appointments instantly.</p>
-    <button (click)="goToAppointment()">Book Appointment</button>
+    <button routerLink="/appointment">Book Appointment</button>
   </div>
 </section>
 
@@ -46,7 +46,7 @@
 
       <p class="email">{{ doc.email }}</p>
 
-      <button (click)="goToAppointment()">Book Appointment</button>
+      <button routerLink="/appointment">Book Appointment</button>
     </div>
   </div>
 </section>
