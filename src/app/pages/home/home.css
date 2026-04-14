@@ -14,20 +14,21 @@
 }
 
 .hero h1 {
-  font-size: 48px;
-  font-weight: bold;
+  font-size: 52px;
+  margin-bottom: 15px;
 }
 
 .hero p {
-  margin: 15px 0;
   font-size: 18px;
+  margin-bottom: 25px;
+  line-height: 1.6;
 }
 
 .hero button {
   padding: 12px 30px;
-  background: #00c6ff;
+  background: #ffd700;
   border: none;
-  color: white;
+  color: black;
   border-radius: 25px;
   cursor: pointer;
   font-size: 16px;
@@ -35,6 +36,7 @@
 
 .hero button:hover {
   background: #0072ff;
+  color: white;
 }
 
 .services {
@@ -100,36 +102,28 @@
   height: 110px;
   border-radius: 50%;
   object-fit: cover;
+  display: block;
+  margin: 0 auto;
   margin-bottom: 10px;
 }
 
 .special {
-  color: #0072ff;
-  font-weight: bold;
-}
-
-.exp {
-  margin: 8px 0;
-  font-size: 14px;
-  color: #555;
-}
-
-.email {
-  font-size: 13px;
   color: gray;
-  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .card button {
-  padding: 10px 20px;
+  margin-top: 10px;
+  padding: 10px 18px;
   border: none;
-  background: #0072ff;
-  color: white;
-  border-radius: 20px;
+  background: #ffd700;
+  color: black;
+  border-radius: 25px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .card button:hover {
-  background: #0056cc;
+  background: #0072ff;
+  color: white;
 }

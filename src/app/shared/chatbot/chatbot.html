@@ -1,0 +1,45 @@
+<div class="chat-toggle" (click)="toggleChat()">💬</div>
+
+<div class="chatbox" *ngIf="isOpen">
+  <div class="header">
+    <span>Healthcare Assistant</span>
+    <span (click)="toggleChat()">✖</span>
+  </div>
+
+  <div class="messages" #chatBody>
+    <div *ngFor="let msg of messages" [ngClass]="msg.from">
+      {{ msg.text }}
+    </div>
+  </div>
+
+  <div class="quick-actions">
+    <button class="main-btn" (click)="quickMsg('Book an Appointment')">Appointment</button>
+    <button class="main-btn" (click)="quickMsg('Doctors')">Doctors</button>
+    <button class="main-btn" (click)="quickMsg('Services')">Services</button>
+  </div>
+
+  <div class="quick-actions" *ngIf="showDoctors">
+    <button *ngFor="let doc of doctors" (click)="selectDoctor(doc)">
+      {{ doc }}
+    </button>
+  </div>
+
+  <div class="quick-actions" *ngIf="showServices">
+    <button *ngFor="let service of services">
+      {{ service }}
+    </button>
+  </div>
+
+  <div class="quick-actions">
+    <button (click)="clearChat()">🗑 Clear Chat</button>
+  </div>
+
+  <div class="input-box">
+    <input
+      [(ngModel)]="userInput"
+      placeholder="Type your message..."
+      (keydown.enter)="sendMessage()"
+    />
+    <button (click)="sendMessage()">➤</button>
+  </div>
+</div>

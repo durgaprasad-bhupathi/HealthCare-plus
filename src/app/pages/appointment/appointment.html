@@ -1,5 +1,14 @@
 <div class="appointment-container">
-  <h2>Book Appointment</h2>
+  <h2>Make An Appointment</h2>
+
+  <div *ngIf="selectedDoctor" class="doctor-card">
+    <img [src]="'https://randomuser.me/api/portraits/men/' + selectedDoctor.id + '.jpg'" />
+
+    <h3>{{ selectedDoctor.name }}</h3>
+    <p><strong>Specialization:</strong> {{ selectedDoctor.specialization }}</p>
+    <p><strong>Email:</strong> {{ selectedDoctor.email }}</p>
+    <p><strong>Experience:</strong> {{ selectedDoctor.experience }}</p>
+  </div>
 
   <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="form-group">
@@ -41,7 +50,7 @@
       <input type="date" formControlName="date" placeholder="Select Date" />
     </div>
 
-    <button type="submit">Book Appointment</button>
+    <button type="submit">Submit</button>
 
     <p class="success" *ngIf="success">Appointment Booked Successfully!</p>
   </form>

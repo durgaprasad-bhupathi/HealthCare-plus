@@ -57,8 +57,8 @@ textarea:focus {
 button {
   width: 100%;
   padding: 14px;
-  background: #0d6efd;
-  color: #fff;
+  background: #ffd700;
+  color: black;
   font-size: 16px;
   font-weight: 500;
   border: none;
@@ -69,8 +69,8 @@ button {
 }
 
 button:hover {
-  background: #0b5ed7;
-  transform: translateY(-2px);
+  background: #0072ff;
+  color: white;
 }
 
 .success-msg {

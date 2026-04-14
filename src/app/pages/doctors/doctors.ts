@@ -47,11 +47,10 @@ export class Doctors {
 
   goToAppointment(doc: any) {
     this.router.navigate(['/appointment'], {
+      state: { doctor: doc },
       queryParams: {
         name: doc.name,
         specialization: doc.specialization,
-        experience: doc.experience,
-        rating: doc.rating,
       },
     });
   }

@@ -11,6 +11,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class Appointment {
   success = false;
+  selectedDoctor: any = null;
 
   doctors = [
     'Leanne Graham',
@@ -33,9 +34,23 @@ export class Appointment {
     date: new FormControl('', Validators.required),
   });
 
+  ngOnInit() {
+    const data = history.state;
+
+    if (data?.doctor) {
+      this.selectedDoctor = data.doctor;
+
+      this.form.patchValue({
+        doctor: this.selectedDoctor.name,
+      });
+    }
+  }
+
   submit() {
     if (this.form.valid) {
-      console.log(this.form.value);
+      console.log('Form Data:', this.form.value);
+      console.log('Doctor Details:', this.selectedDoctor);
+
       this.success = true;
       this.form.reset();
     }

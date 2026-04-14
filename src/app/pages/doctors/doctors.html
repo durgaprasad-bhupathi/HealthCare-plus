@@ -7,17 +7,13 @@
 
   <div class="grid">
     <div *ngFor="let doc of filteredDoctors()" class="card">
-      <img [src]="'https://randomuser.me/api/portraits/men/' + doc.id + '.jpg'" />
-
       <h3>{{ doc.name }}</h3>
 
       <p class="special">{{ doc.specialization }}</p>
 
-      <p class="info">⭐ {{ doc.rating }} | {{ doc.experience }}</p>
+      <img [src]="'https://randomuser.me/api/portraits/men/' + doc.id + '.jpg'" />
 
-      <p class="email">{{ doc.email }}</p>
-
-      <button (click)="goToAppointment(doc)">Book Appointment</button>
+      <button (click)="goToAppointment(doc)">Make Appointment</button>
     </div>
   </div>
 </div>

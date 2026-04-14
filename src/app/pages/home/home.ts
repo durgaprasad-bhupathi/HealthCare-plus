@@ -26,25 +26,32 @@ export class Home {
         {
           ...data[0],
           specialization: 'Cardiologist',
-          rating: 3.2,
-          experience: '7 yrs',
+          experience: Math.floor(Math.random() * 15) + 1 + ' yrs',
           image: 'https://randomuser.me/api/portraits/men/1.jpg',
         },
         {
           ...data[1],
           specialization: 'Dermatologist',
-          rating: 4.2,
-          experience: '14 yrs',
+          experience: Math.floor(Math.random() * 15) + 1 + ' yrs',
           image: 'https://randomuser.me/api/portraits/men/2.jpg',
         },
         {
           ...data[2],
           specialization: 'Neurologist',
-          rating: 4.4,
-          experience: '7 yrs',
+          experience: Math.floor(Math.random() * 15) + 1 + ' yrs',
           image: 'https://randomuser.me/api/portraits/men/3.jpg',
         },
       ];
+    });
+  }
+
+  goToAppointment(doc: any) {
+    this.router.navigate(['/appointment'], {
+      state: { doctor: doc },
+      queryParams: {
+        name: doc.name,
+        specialization: doc.specialization,
+      },
     });
   }
 }
